@@ -65,14 +65,8 @@ class PluginManager:
         try:
             with open(self.installed_file, 'w') as f:
                 json.dump(data, f, indent=2)
-        except IOError as e:
+        except (IOError, OSError, PermissionError) as e:
             print(f"Error: Failed to save installed plugins: {e}")
-            sys.exit(1)
-        except PermissionError:
-            print(f"Error: Permission denied writing to {self.installed_file}")
-            sys.exit(1)
-        except OSError as e:
-            print(f"Error: System error while saving: {e}")
             sys.exit(1)
     
     def list_available(self, category: Optional[str] = None):
