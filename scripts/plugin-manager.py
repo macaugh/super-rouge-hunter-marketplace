@@ -9,6 +9,7 @@ import os
 import shutil
 import sys
 import urllib.request
+from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -31,20 +32,48 @@ class PluginManager:
         
     def load_registry(self) -> Dict:
         """Load the plugin registry"""
-        with open(self.registry_file, 'r') as f:
-            return json.load(f)
+        try:
+            with open(self.registry_file, 'r') as f:
+                return json.load(f)
+        except FileNotFoundError:
+            print(f"Error: Registry file not found at {self.registry_file}")
+            sys.exit(1)
+        except json.JSONDecodeError as e:
+            print(f"Error: Registry file contains invalid JSON: {e}")
+            sys.exit(1)
+        except PermissionError:
+            print(f"Error: Permission denied reading {self.registry_file}")
+            sys.exit(1)
     
     def load_installed(self) -> Dict:
         """Load installed plugins list"""
         if self.installed_file.exists():
-            with open(self.installed_file, 'r') as f:
-                return json.load(f)
+            try:
+                with open(self.installed_file, 'r') as f:
+                    return json.load(f)
+            except json.JSONDecodeError as e:
+                print(f"Warning: Installed plugins file contains invalid JSON: {e}")
+                print("Creating new installed plugins list...")
+                return {"plugins": []}
+            except PermissionError:
+                print(f"Error: Permission denied reading {self.installed_file}")
+                sys.exit(1)
         return {"plugins": []}
     
     def save_installed(self, data: Dict):
         """Save installed plugins list"""
-        with open(self.installed_file, 'w') as f:
-            json.dump(data, f, indent=2)
+        try:
+            with open(self.installed_file, 'w') as f:
+                json.dump(data, f, indent=2)
+        except IOError as e:
+            print(f"Error: Failed to save installed plugins: {e}")
+            sys.exit(1)
+        except PermissionError:
+            print(f"Error: Permission denied writing to {self.installed_file}")
+            sys.exit(1)
+        except OSError as e:
+            print(f"Error: System error while saving: {e}")
+            sys.exit(1)
     
     def list_available(self, category: Optional[str] = None):
         """List available plugins"""
@@ -172,7 +201,7 @@ class PluginManager:
             'name': plugin['name'],
             'version': plugin['version'],
             'status': 'active',
-            'installed_at': '2025-10-14T16:29:33.572Z'
+            'installed_at': datetime.now().astimezone().isoformat()
         })
         
         self.save_installed(installed)
