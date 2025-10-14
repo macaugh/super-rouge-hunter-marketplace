@@ -1,0 +1,106 @@
+{
+  "registry": {
+    "name": "Super Rouge Hunter Marketplace",
+    "version": "1.0.0",
+    "description": "Official marketplace for super rouge hunter plugins for red team and penetration testing tools",
+    "lastUpdated": "2025-10-14T16:29:33.572Z"
+  },
+  "plugins": [
+    {
+      "id": "network-scanner",
+      "name": "Network Scanner",
+      "version": "1.0.0",
+      "description": "Advanced network scanning and reconnaissance plugin using nmap and custom techniques",
+      "author": "Red Team Tools",
+      "category": "reconnaissance",
+      "tags": ["nmap", "port-scanning", "network-discovery", "service-detection"],
+      "repository": "https://github.com/example/network-scanner",
+      "license": "MIT",
+      "path": "plugins/network-scanner",
+      "compatibility": {
+        "platforms": ["linux", "macos"],
+        "minVersion": "1.0.0"
+      }
+    },
+    {
+      "id": "payload-generator",
+      "name": "Payload Generator",
+      "version": "1.0.0",
+      "description": "Generate and customize payloads for various exploitation frameworks",
+      "author": "Red Team Tools",
+      "category": "exploitation",
+      "tags": ["payloads", "shellcode", "metasploit", "exploitation"],
+      "repository": "https://github.com/example/payload-generator",
+      "license": "MIT",
+      "path": "plugins/payload-generator",
+      "compatibility": {
+        "platforms": ["all"],
+        "minVersion": "1.0.0"
+      }
+    },
+    {
+      "id": "stealth-persistence",
+      "name": "Stealth Persistence",
+      "version": "1.0.0",
+      "description": "Establish and maintain stealthy persistence mechanisms on target systems",
+      "author": "Red Team Tools",
+      "category": "persistence",
+      "tags": ["persistence", "backdoor", "stealth", "rootkit"],
+      "repository": "https://github.com/example/stealth-persistence",
+      "license": "MIT",
+      "path": "plugins/stealth-persistence",
+      "compatibility": {
+        "platforms": ["linux", "windows"],
+        "minVersion": "1.0.0"
+      }
+    },
+    {
+      "id": "credential-harvester",
+      "name": "Credential Harvester",
+      "version": "1.0.0",
+      "description": "Extract and decrypt credentials from various sources including browsers, memory, and files",
+      "author": "Red Team Tools",
+      "category": "credential-access",
+      "tags": ["credentials", "passwords", "mimikatz", "browser-passwords"],
+      "repository": "https://github.com/example/credential-harvester",
+      "license": "MIT",
+      "path": "plugins/credential-harvester",
+      "compatibility": {
+        "platforms": ["windows", "linux"],
+        "minVersion": "1.0.0"
+      }
+    },
+    {
+      "id": "defense-evasion-toolkit",
+      "name": "Defense Evasion Toolkit",
+      "version": "1.0.0",
+      "description": "Tools and techniques for evading detection by security software and monitoring systems",
+      "author": "Red Team Tools",
+      "category": "defense-evasion",
+      "tags": ["evasion", "anti-detection", "obfuscation", "sandbox-escape"],
+      "repository": "https://github.com/example/defense-evasion-toolkit",
+      "license": "MIT",
+      "path": "plugins/defense-evasion-toolkit",
+      "compatibility": {
+        "platforms": ["all"],
+        "minVersion": "1.0.0"
+      }
+    },
+    {
+      "id": "c2-framework",
+      "name": "Command & Control Framework",
+      "version": "1.0.0",
+      "description": "Establish secure command and control channels with multiple protocols and obfuscation",
+      "author": "Red Team Tools",
+      "category": "command-and-control",
+      "tags": ["c2", "command-control", "covert-channel", "communication"],
+      "repository": "https://github.com/example/c2-framework",
+      "license": "MIT",
+      "path": "plugins/c2-framework",
+      "compatibility": {
+        "platforms": ["all"],
+        "minVersion": "1.0.0"
+      }
+    }
+  ]
+}

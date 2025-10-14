@@ -1,0 +1,35 @@
+{
+  "id": "payload-generator",
+  "name": "Payload Generator",
+  "version": "1.0.0",
+  "description": "Generate and customize payloads for various exploitation frameworks",
+  "author": "Red Team Tools",
+  "category": "exploitation",
+  "tags": ["payloads", "shellcode", "metasploit", "exploitation"],
+  "repository": "https://github.com/example/payload-generator",
+  "homepage": "https://example.com/docs/payload-generator",
+  "license": "MIT",
+  "dependencies": {
+    "tools": ["msfvenom"],
+    "libraries": {
+      "python": ["pycryptodome"]
+    }
+  },
+  "compatibility": {
+    "platforms": ["all"],
+    "minVersion": "1.0.0"
+  },
+  "capabilities": [
+    "shellcode-generation",
+    "payload-encoding",
+    "payload-obfuscation",
+    "multi-stage-payloads",
+    "custom-templates"
+  ],
+  "entrypoint": "generator.py",
+  "configuration": {
+    "defaultEncoder": "shikata_ga_nai",
+    "outputFormat": "raw",
+    "architecture": "x64"
+  }
+}
