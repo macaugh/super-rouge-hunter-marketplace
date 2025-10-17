@@ -1,0 +1,43 @@
+{
+  "name": "super-rouge-hunter",
+  "owner": {
+    "name": "Red Team Tools",
+    "email": "contact@redteamtools.com"
+  },
+  "metadata": {
+    "description": "Official marketplace for super rouge hunter plugins for red team operations, penetration testing, and security research",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "reconnaissance-skills",
+      "description": "Network reconnaissance and discovery capabilities including port scanning, service detection, and OS fingerprinting",
+      "source": "./",
+      "strict": false,
+      "keywords": ["network", "scan", "nmap", "reconnaissance", "discovery", "port", "service", "fingerprint", "os-detection"],
+      "skills": [
+        "./plugins/network-scanner"
+      ]
+    },
+    {
+      "name": "exploitation-skills",
+      "description": "Exploitation and payload generation tools for penetration testing including shellcode and framework integration",
+      "source": "./",
+      "strict": false,
+      "keywords": ["exploit", "payload", "shellcode", "metasploit", "msfvenom", "shell", "reverse-shell", "bind-shell"],
+      "skills": [
+        "./plugins/payload-generator"
+      ]
+    },
+    {
+      "name": "credential-access-skills",
+      "description": "Credential harvesting and extraction from browsers, memory dumps, and files",
+      "source": "./",
+      "strict": false,
+      "keywords": ["credential", "password", "browser", "memory", "hash", "token", "harvester", "mimikatz", "dump"],
+      "skills": [
+        "./plugins/credential-harvester"
+      ]
+    }
+  ]
+}
