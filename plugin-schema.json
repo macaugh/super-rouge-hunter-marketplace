@@ -1,0 +1,143 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Super Rouge Hunter Plugin",
+  "description": "Schema for super rouge hunter marketplace plugins",
+  "type": "object",
+  "required": ["id", "name", "version", "description", "author", "category"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the plugin (kebab-case)",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable plugin name"
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version (semver)",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of what the plugin does"
+    },
+    "author": {
+      "type": "string",
+      "description": "Author name or organization"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "reconnaissance",
+        "exploitation",
+        "persistence",
+        "privilege-escalation",
+        "defense-evasion",
+        "credential-access",
+        "discovery",
+        "lateral-movement",
+        "collection",
+        "exfiltration",
+        "command-and-control",
+        "impact",
+        "utilities"
+      ],
+      "description": "MITRE ATT&CK inspired category"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Keywords for searching and filtering"
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the plugin's source repository"
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri",
+      "description": "Plugin homepage or documentation URL"
+    },
+    "license": {
+      "type": "string",
+      "description": "License identifier (e.g., MIT, Apache-2.0)"
+    },
+    "dependencies": {
+      "type": "object",
+      "description": "Dependencies required by this plugin",
+      "properties": {
+        "plugins": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other plugins this plugin depends on"
+        },
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "External tools required (e.g., nmap, metasploit)"
+        },
+        "libraries": {
+          "type": "object",
+          "description": "Language-specific libraries",
+          "properties": {
+            "python": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nodejs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "description": "Compatibility requirements",
+      "properties": {
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["linux", "macos", "windows", "all"]
+          },
+          "description": "Supported operating systems"
+        },
+        "minVersion": {
+          "type": "string",
+          "description": "Minimum Claude Code version required"
+        }
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of capabilities this plugin provides"
+    },
+    "entrypoint": {
+      "type": "string",
+      "description": "Main file or script to execute"
+    },
+    "configuration": {
+      "type": "object",
+      "description": "Default configuration options",
+      "additionalProperties": true
+    }
+  }
+}

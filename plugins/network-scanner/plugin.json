@@ -1,0 +1,36 @@
+{
+  "id": "network-scanner",
+  "name": "Network Scanner",
+  "version": "1.0.0",
+  "description": "Advanced network scanning and reconnaissance plugin using nmap and custom techniques",
+  "author": "Red Team Tools",
+  "category": "reconnaissance",
+  "tags": ["nmap", "port-scanning", "network-discovery", "service-detection"],
+  "repository": "https://github.com/example/network-scanner",
+  "homepage": "https://example.com/docs/network-scanner",
+  "license": "MIT",
+  "dependencies": {
+    "tools": ["nmap", "masscan"],
+    "libraries": {
+      "python": ["python-nmap", "scapy"]
+    }
+  },
+  "compatibility": {
+    "platforms": ["linux", "macos"],
+    "minVersion": "1.0.0"
+  },
+  "capabilities": [
+    "port-scanning",
+    "service-detection",
+    "os-fingerprinting",
+    "vulnerability-scanning",
+    "network-mapping"
+  ],
+  "entrypoint": "scanner.py",
+  "configuration": {
+    "defaultTimeout": 300,
+    "defaultPorts": "1-65535",
+    "scanSpeed": "aggressive",
+    "outputFormat": "json"
+  }
+}

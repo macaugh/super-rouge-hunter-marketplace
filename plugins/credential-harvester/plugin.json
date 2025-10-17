@@ -1,0 +1,35 @@
+{
+  "id": "credential-harvester",
+  "name": "Credential Harvester",
+  "version": "1.0.0",
+  "description": "Extract and decrypt credentials from various sources including browsers, memory, and files",
+  "author": "Red Team Tools",
+  "category": "credential-access",
+  "tags": ["credentials", "passwords", "mimikatz", "browser-passwords"],
+  "repository": "https://github.com/example/credential-harvester",
+  "homepage": "https://example.com/docs/credential-harvester",
+  "license": "MIT",
+  "dependencies": {
+    "tools": [],
+    "libraries": {
+      "python": ["pycryptodome", "psutil"]
+    }
+  },
+  "compatibility": {
+    "platforms": ["windows", "linux"],
+    "minVersion": "1.0.0"
+  },
+  "capabilities": [
+    "browser-password-extraction",
+    "memory-dump-analysis",
+    "credential-file-parsing",
+    "hash-extraction",
+    "token-stealing"
+  ],
+  "entrypoint": "harvester.py",
+  "configuration": {
+    "searchDepth": "deep",
+    "includeHashes": true,
+    "outputFormat": "json"
+  }
+}
