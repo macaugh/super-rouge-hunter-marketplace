@@ -14,7 +14,7 @@
       "description": "Network reconnaissance and discovery capabilities including port scanning, service detection, and OS fingerprinting",
       "source": "./",
       "strict": false,
-      "keywords": ["network", "scan", "nmap", "reconnaissance", "discovery", "port", "service", "fingerprint", "os detection"],
+      "keywords": ["network", "scan", "nmap", "reconnaissance", "discovery", "port", "service", "fingerprint", "os-detection"],
       "skills": [
         "./plugins/network-scanner"
       ]
@@ -24,7 +24,7 @@
       "description": "Exploitation and payload generation tools for penetration testing including shellcode and framework integration",
       "source": "./",
       "strict": false,
-      "keywords": ["exploit", "payload", "shellcode", "metasploit", "msfvenom", "shell", "reverse shell", "bind shell"],
+      "keywords": ["exploit", "payload", "shellcode", "metasploit", "msfvenom", "shell", "reverse-shell", "bind-shell"],
       "skills": [
         "./plugins/payload-generator"
       ]
